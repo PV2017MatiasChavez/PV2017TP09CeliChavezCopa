@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Punto1</title>
+    </h:head>
+    <h:body>
+        <p:panel id="pnlTriangulo"
+                 header="Es Triangulo?"
+                 style="width: 390px"
+                 footer="Escuela de Minas - PV 2017">
+            <h:form id="frmTriangulo" >
+                <p:panelGrid columns="1">
+                    <h:panelGrid id="tblTriangulo" columns="5">
+                        <p:outputLabel id="lblA1" value="Punto A: (" />
+                        <p:inputText id="txtA1X" value="#{trianguloFormBean.x1}" size="5" />
+                        <p:outputLabel id="lblA2" value=","/>
+                        <p:inputText id="txtA1Y" value="#{trianguloFormBean.y1}" size="5" />
+                        <p:outputLabel id="lblA3" value=")"/>
+
+                        <p:outputLabel id="lblB1" value="Punto B: (" />
+                        <p:inputText id="txtB1X" value="#{trianguloFormBean.x2}" size="5" />
+                        <p:outputLabel id="lblB2" value=","/>
+                        <p:inputText id="txtB1Y" value="#{trianguloFormBean.y2}" size="5" />
+                        <p:outputLabel id="lblB3" value=")"/>        
+
+                        <p:outputLabel id="lblC1" value="Punto C: (" />
+                        <p:inputText id="txtC1X" value="#{trianguloFormBean.x3}" size="5" />
+                        <p:outputLabel id="lblC2" value=","/>
+                        <p:inputText id="txtC1Y" value="#{trianguloFormBean.y3}" size="5" />
+                        <p:outputLabel id="lblC3" value=")"/>  
+                    </h:panelGrid>
+                    <p:panelGrid columns="2">
+                        <p:commandButton id="btnCalcular" value="Verificar" update="lblValorTriangulo lblValorPerimetro" 
+                                         action="#{trianguloFormBean.ingresarPuntos()}" />
+                        <p:outputLabel id="lblValorTriangulo" value="#{trianguloFormBean.esTriangulo}"/>
+
+                        <p:outputLabel id="lblPerimetro" value="Perimetro: "/>
+                        <p:outputLabel id="lblValorPerimetro" value="#{trianguloFormBean.perimetro}"/>
+                    </p:panelGrid>
+                </p:panelGrid>
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>
+
